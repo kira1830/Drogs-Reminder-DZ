@@ -1,0 +1,44 @@
+<resources>
+	<style
+		name="AppTheme"
+		parent="Theme.AppCompat.Light.DarkActionBar">
+		<item name="colorPrimary">@color/colorPrimary</item>
+		<item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+		<item name="colorAccent">@color/colorAccent</item>
+	</style>
+	<style
+		name="AppTheme.NoActionBar">
+		<item name="windowActionBar">false</item>
+		<item name="windowNoTitle">true</item>
+	</style>
+	<style
+		name="AppTheme.AppBarOverlay"
+		parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+	<style
+		name="AppTheme.PopupOverlay"
+		parent="ThemeOverlay.AppCompat.Light" />
+	<style
+		name="AppTheme.TimePickerWithSpinner"
+		parent="Theme.AppCompat.Light.Dialog.Alert">
+		<item name="android:dialogTheme">@style/DialogThemeOfTimePickerWithSpinner</item>
+		<item name="android:timePickerStyle">@style/TimePickerWithSpinner</item>
+	</style>
+	<style
+		name="DialogThemeOfTimePickerWithSpinner"
+		parent="Theme.AppCompat.Light.Dialog">
+		<item name="android:timePickerStyle">@style/TimePickerWithSpinner</item>
+	</style>
+	<style
+		name="TimePickerWithSpinner"
+		parent="@android:style/Widget.Material.Light.TimePicker">
+		<item name="android:timePickerMode">spinner</item>
+	</style>
+	<style
+		name="AppTheme.Transparent"
+		parent="AppTheme.NoActionBar">
+		<item name="colorPrimary">@color/colorTransparent</item>
+		<item name="colorPrimaryDark">@color/colorTransparent</item>
+		<item name="colorAccent">@color/colorTransparent</item>
+	</style>
+	<style name="splashScren" parent="AppTheme.NoActionBar"/>
+</resources>

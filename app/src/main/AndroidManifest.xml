@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="amrani_hichem.apps.drugsreminder">
+	
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:fullBackupContent="@xml/my_backup_rules"
+        android:icon="@mipmap/reminder_logo_health"
+        android:label="@string/app_name"
+        android:persistent="true"
+        android:roundIcon="@mipmap/reminder_logo_health_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name="amrani_hichem.apps.drugsreminder.activities.WelcomeActivity"
+            android:theme="@style/splashScren">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
+
+        <receiver android:name="amrani_hichem.apps.drugsreminder.receivers.AlarmReceiver" />
+        <receiver android:name="amrani_hichem.apps.drugsreminder.receivers.NotificationReceiver" />
+        <receiver android:name="amrani_hichem.apps.drugsreminder.receivers.GuardReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.ACTION_BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+
+        <activity
+            android:name="amrani_hichem.apps.drugsreminder.activities.MainActivity"
+            android:configChanges="orientation|screenSize"
+            android:label="@string/app_name"
+    
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="amrani_hichem.apps.drugsreminder.activities.EditMealActivity"
+            android:configChanges="orientation|screenSize"
+            android:parentActivityName="amrani_hichem.apps.drugsreminder.activities.MainActivity"
+           
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="amrani_hichem.apps.drugsreminder.activities.MainActivity" />
+        </activity>
+        <activity
+            android:name="amrani_hichem.apps.drugsreminder.activities.EditDrugActivity"
+            android:configChanges="orientation|screenSize"
+            android:parentActivityName="amrani_hichem.apps.drugsreminder.activities.MainActivity"
+
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="amrani_hichem.apps.drugsreminder.activities.MainActivity" />
+        </activity>
+        <activity
+            android:name="amrani_hichem.apps.drugsreminder.activities.EditReminderActivity"
+            android:configChanges="orientation|screenSize"
+            android:parentActivityName="amrani_hichem.apps.drugsreminder.activities.MainActivity"
+
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="amrani_hichem.apps.drugsreminder.activities.MainActivity" />
+        </activity>
+        <activity
+            android:name="amrani_hichem.apps.drugsreminder.activities.AlarmActivity"
+            android:configChanges="orientation|screenSize"
+           
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="amrani_hichem.apps.drugsreminder.activities.AboutActivity"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+
+        <service android:name="amrani_hichem.apps.drugsreminder.services.NotificationService" />
+        <service
+            android:name="amrani_hichem.apps.drugsreminder.services.GuardService"
+            android:exported="true">
+            <intent-filter android:priority="900">
+                <action android:name=".ACTION_GUARD" />
+            </intent-filter>
+        </service>
+        <service
+            android:name="amrani_hichem.apps.drugsreminder.services.ProtectionService"
+            android:exported="true"
+            android:process=":remote">
+            <intent-filter android:priority="900">
+                <action android:name=".ACTION_PROTECTION" />
+            </intent-filter>
+        </service>
+        
+    </application>
+
+</manifest>

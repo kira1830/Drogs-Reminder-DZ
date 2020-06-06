@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.preference.PreferenceScreen
+	xmlns:android="http://schemas.android.com/apk/res/android">
+	<PreferenceCategory
+		android:title="@string/reminder_preference_category_title">
+		<amrani_hichem.apps.drugsreminder.preferences.DurationPreference
+			android:title="@string/reminder_advance_time_preference_title"
+			android:summary="@string/reminder_advance_time_preference_summary"
+			android:key="advanceTimeMinutes" />
+		<Preference
+			android:key="ringtoneUri"
+			android:summary="@string/reminder_ringtone_preference_summary"
+			android:title="@string/reminder_ringtone_preference_title" />
+		<SwitchPreferenceCompat
+			android:key="vibration"
+			android:title="@string/reminder_vibration_preference_title"
+			android:summary="@string/reminder_vibration_preference_summary" />
+
+		<amrani_hichem.apps.drugsreminder.preferences.DurationPreference
+			android:title="@string/reminder_auto_close_time_preference_title"
+			android:summary="@string/reminder_auto_close_time_preference_summary"
+			android:key="autoCloseTimeMinutes" />
+		<amrani_hichem.apps.drugsreminder.preferences.DurationPreference
+			android:title="@string/reminder_delay_preference_title"
+			android:summary="@string/reminder_delay_preference_summary"
+			android:key="delayMinutes" />
+	</PreferenceCategory>
+	<PreferenceCategory
+		android:title="@string/config_preference_category_title">
+		<SwitchPreferenceCompat
+			android:key="resetStarting"
+			android:title="@string/config_reset_starting_preference_title"
+			android:summary="@string/config_reset_starting_preference_summary" />
+		<EditTextPreference
+			android:key="defaultFrequency"
+			android:title="@string/config_default_frequency_preference_title"
+			android:summary="@string/config_default_frequency_preference_summary"
+			android:dialogLayout="@layout/config_default_frequency_layout" />
+		<Preference
+			android:key="grantPermissions"
+			android:title="@string/config_grant_permissions_preference_title"
+			android:summary="@string/config_grant_permissions_preference_summary" />
+		<Preference
+			android:key="allowAutoStart"
+			android:title="@string/config_allow_auto_start_preference_title"
+			android:summary="@string/config_allow_auto_start_preference_summary" />
+	</PreferenceCategory>
+
+	<PreferenceCategory
+		android:title="@string/others_preference_category_title">
+		<Preference
+			android:key="resetSettings"
+			android:title="@string/other_reset_preference_title"
+			android:summary="@string/other_reset_preference_summary" />
+		<Preference
+			android:key="about"
+			android:title="@string/other_about_preference_title"
+			android:summary="@string/other_about_preference_summary" />
+
+	</PreferenceCategory>
+</androidx.preference.PreferenceScreen>
